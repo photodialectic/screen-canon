@@ -6,7 +6,6 @@ var fs = require('fs');
 
 
 app.get('/', function (req, res) {
-	console.log(req);
   var pageres = new Pageres({delay: 2})
     .src(req.param('url'), ['iphone 5s'], {crop: true, selector: req.param('selector')})
     .dest(__dirname);
