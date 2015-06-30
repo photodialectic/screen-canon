@@ -6,13 +6,32 @@ var fs = require('fs');
 
 
 app.get('/', function (req, res) {
+ 	var filename = req.query.url + req.query.selector;
+  var dirname = __dirname + '/shots';
+  var fullPath = dirname + '/' + filename + '.png';
   var pageres = new Pageres({delay: 2})
-    .src(req.param('url'), ['iphone 5s'], {crop: true, selector: req.param('selector')})
-    .dest(__dirname);
+    .src(req.query.url, [req.param('viewport', '1280x1024')], {
+    	crop: true, 
+    	selector: req.query.selector, 
+    	filename: filename
+    })
+    .dest(dirname);
 
-	pageres.run(function (err, items) {
-		res.sendFile(__dirname + '/' + items[0].filename);
-	});
+  res.sendFile(fullPath, {}, function(err){
+  	if(!err) {
+  		fileSent = true;
+  	}
+  });
+
+  if(!app.get(fullPath)) {
+	  app.set(fullPath, true);
+		pageres.run(function (err, items) {
+			app.set(fullPath, false);
+			if(!fileSent) {
+				res.sendFile(__dirname + '/' + items[0].filename);
+			}
+		});
+  }
 
 });
 
