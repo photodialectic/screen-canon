@@ -20,5 +20,4 @@ npm install
 ```
 node app.js
 ```
-Go and grab a screen shot
-http://localhost:3000/?url=buzzfeed.com&selector=.splash__container
+Go and grab a [screenshot of buzzfeed splash](http://localhost:3000/?url=buzzfeed.com&selector=.splash__container)
