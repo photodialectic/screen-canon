@@ -1,7 +1,16 @@
 var express = require('express')
-  , app     = express();
+  , app     = express()
+  , mustacheExpress = require('mustache-express');
 
+
+app.use('/static', express.static('public'));
 app.use(require('./controllers'))
+
+app.engine('mustache', mustacheExpress());
+
+app.set('view engine', 'mustache');
+app.set('views', __dirname + '/views');
+
 
 var server = app.listen(3000, function () {
 
