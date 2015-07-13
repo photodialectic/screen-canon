@@ -19,6 +19,7 @@ cd screen-canon
 ```
 npm install
 ```
+Make sure you have a ```config/development.json``` file or whatever relevant environment you want. 
 ```
 export NODE_ENV=development;
 node app.js
