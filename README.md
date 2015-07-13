@@ -24,4 +24,4 @@ Make sure you have a ```config/development.json``` file or whatever relevant env
 export NODE_ENV=development;
 node app.js
 ```
-Go and grab a [screenshot of buzzfeed splash](http://localhost:3000/?url=buzzfeed.com&selector=.splash__container)
+Go and grab a [screenshot of buzzfeed splash](http://localhost:3000/1280x1024/buzzfeed.com?opt[selector]=.splash__container)
