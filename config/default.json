@@ -1,0 +1,8 @@
+{
+	"AWS" : {
+		"access_key" : "",
+		"secret_key" : "",
+		"bucket"     : ""
+	},
+	"render_path" : "/tmp/screen-canon-shots/"
+}
