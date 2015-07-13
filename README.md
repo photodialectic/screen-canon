@@ -17,11 +17,8 @@ Clone this repo
 cd screen-canon
 ```
 ```
-npm install
+make dev
 ```
-Make sure you have a ```config/development.json``` file or whatever relevant environment you want. 
-```
-export NODE_ENV=development;
-node app.js
-```
+*Make sure you have a ```config/development.json``` file or whatever relevant environment you want. 
+
 Go and grab a [screenshot of buzzfeed splash](http://localhost:3000/1280x1024/buzzfeed.com?opt[selector]=.splash__container)
