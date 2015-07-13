@@ -1,0 +1,78 @@
+// Solid-Specific colors
+$js-highlight-magenta: #d14;
+
+
+// Code Snipppet Syntax Highlighting https://highlightjs.org/
+code {
+  font-family: Monaco, monospace;
+  white-space: pre-wrap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // Inline code blocks
+  &.js-highlight {
+    border: $border;
+    display: inline-block;
+    padding: 2px 4px;
+    border-radius: 2px;
+    background-color: $fill-gray--lighter;
+    font-size: $type-6;
+    color: $js-highlight-magenta;
+  }
+  
+  // Override highlight.js theme properties
+  &.hljs { 
+    background-color: $fill-gray--lighter; 
+    padding: $space-2;
+    font-size: $type-5;
+    line-height: 1.75;
+  }
+}
+
+pre {
+  line-height: 0;
+}
+
+// Solid Nav
+
+.solid-nav {
+
+  h2 {
+    padding: .35rem 0;
+  }
+
+  a {
+    padding: .35rem 0;
+    text-decoration: none;
+    transition: color ease-in-out .1s;
+  }
+  
+  a:hover {
+    color: $text-red;
+    transition: color ease-in-out .1s;
+  }
+
+}
+
+.nav-carat {
+  background-image: svg-background($down-caret);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 1rem) center;
+  background-size: .6875rem;
+}
+
+// Welcome
+
+.find-help a {
+  text-decoration: none;
+}
+
+.find-help a:hover {
+  background: $fill-gray--lighter;
+}
+
+// Resources > Logos
+
+.line-height-0 {
+  line-height: 0;
+}
