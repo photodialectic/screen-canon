@@ -18,13 +18,14 @@
     "grunt-contrib-cssmin": "^0.12.3",
     "grunt-contrib-sass": "^0.9.2",
     "mustache-express": "^1.2.1",
-    "pageres": "^2.0.0"
+    "pageres": "^2.0.0",
+    "process": "^0.11.1"
   },
   "devDependencies": {
     "grunt": "^0.4.5"
   },
-  "repository" : {
-  "type": "git",
-  "url": "https://github.com/photodialectic/screen-canon"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/photodialectic/screen-canon"
   }
 }
