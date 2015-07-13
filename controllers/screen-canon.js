@@ -19,7 +19,7 @@ app.get('/:viewport/:url', function (req, res) {
     , fileFull    = filePath;
     
     extend(pageresOpts, defaultOpts, options);
-    reqCacheKey += md5(pageresOpts);
+    reqCacheKey += md5(JSON.stringify(pageresOpts));
     pageresOpts.filename = reqCacheKey;
     fileFull += pageresOpts.filename +  '.' + pageresOpts.format;
 
