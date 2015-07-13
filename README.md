@@ -6,6 +6,8 @@ Parameters could include a selector, coodinates, viewport, user-agent, etc. Use 
 ##Dependencies
 [express](http://expressjs.com/) for the main web-application and [pageres](https://github.com/sindresorhus/pageres) for the screen shoting service.
 
+[configuration](https://www.npmjs.com/package/config) is based on environmental variables but is very versatile
+
 ##Why node?
 Mainly [pageres](https://github.com/sindresorhus/pageres) but I also like the idea that you could request a screenshot and node could automatically start processing a new image but reply to the client with a cached copy. That way popular images stay more fresh than less popular. 
 
@@ -18,6 +20,7 @@ cd screen-canon
 npm install
 ```
 ```
+export NODE_ENV=development;
 node app.js
 ```
 Go and grab a [screenshot of buzzfeed splash](http://localhost:3000/?url=buzzfeed.com&selector=.splash__container)
