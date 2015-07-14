@@ -37,3 +37,17 @@ Go and grab a [screenshot of buzzfeed splash](http://localhost:3000/1280x1024/bu
 | fast     | true    | false to fetch live |
 | format   | "png"   |      |
 |userAgent|  "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"||
+
+##Example URLs
+```
+http://localhost:3000/1366x768/buzzfeed.com?opt[selector]=.splash__container
+http://localhost:3000/1366x768/buzzfeed.com?opt[selector]=.badge-list
+http://localhost:3000/1366x768/buzzfeed.com?opt[crop]=true
+http://localhost:3000/iPhone/buzzfeed.com?opt[userAgent]=Mozilla%2F5.0(iPhone%3BU%3BCPUiPhoneOS4_0likeMacOSX%3Ben-us)AppleWebKit%2F532.9(KHTML%2ClikeGecko)Version%2F4.0.5Mobile%2F8A293Safari%2F6531.22.7
+http://localhost:3000/iPhone/buzzfeed.com?opt[userAgent]=Mozilla%2F5.0(iPhone%3BU%3BCPUiPhoneOS4_0likeMacOSX%3Ben-us)AppleWebKit%2F532.9(KHTML%2ClikeGecko)Version%2F4.0.5Mobile%2F8A293Safari%2F6531.22.7&opt
+http://localhost:3000/375x667/buzzfeed.com?opt[crop]=true&opt[userAgent]=Mozilla%2F5.0(iPhone%3BU%3BCPUiPhoneOS4_0likeMacOSX%3Ben-us)AppleWebKit%2F532.9(KHTML%2ClikeGecko)Version%2F4.0.5Mobile%2F8A293Safari%2F6531.22.7
+http://localhost:3000/375x667/buzzfeed.com?opt[selector]=.splash__container&opt[userAgent]=Mozilla%2F5.0(iPhone%3BU%3BCPUiPhoneOS4_0likeMacOSX%3Ben-us)AppleWebKit%2F532.9(KHTML%2ClikeGecko)Version%2F4.0.5Mobile%2F8A293Safari%2F6531.22.7
+http://localhost:3000/1366x768/startribune.com?opt[selector]=.nav-weather-mod
+http://localhost:3000/1366x768/startribune.com?opt[crop]=true
+http://localhost:3000/1366x768/weather.com?opt[selector]=.condition-hp
+```
