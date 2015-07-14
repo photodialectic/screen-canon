@@ -1,8 +1,8 @@
-var AWS = require('aws-sdk')
-	, s3 = new AWS.S3()
-	, config = require('config')
+var AWS     = require('aws-sdk')
+	, s3      = new AWS.S3()
+	, config  = require('config')
 	, process = require('process')
-	, fs = require('fs');
+	, fs      = require('fs');
 
 var screen_canon_s3 = {
 	get_file : function(filename, res) {
@@ -30,7 +30,7 @@ var screen_canon_s3 = {
 						ContentType: "image/" + config.get('pageres_options.format')
 					};
 					s3bucket.upload(params, function (err, data) {
-            // console.log(data);
+            console.log(data);
           });
 			});
 		});

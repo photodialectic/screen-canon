@@ -26,13 +26,15 @@ app.get('/:viewport/:url', function (req, res) {
     fileFull            += pageresOpts.filename +  '.' + pageresOpts.format;
 
     //check if we have a file to send back
-    if(config.get('use_aws')) {
-      aws.get_file(pageresOpts.filename, res);
-    } else {
-      res.sendFile(fileFull, {}, function(err){});
+    if(pageresOpts.fast) {
+      if(config.get('use_aws')) {
+        aws.get_file(pageresOpts.filename, res);
+      } else {
+        res.sendFile(fileFull, {}, function(err){});
+      }
     }
     
-    if(!app.get(reqCacheKey)) {
+    if(!app.get(reqCacheKey) || !pageresOpts.fast) {
 
       //set our key because we are going to go get a new screenshot
       app.set(reqCacheKey, true);

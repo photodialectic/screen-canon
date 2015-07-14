@@ -22,3 +22,18 @@ make dev
 *Make sure you have a ```config/development.json``` file or whatever relevant environment you want. 
 
 Go and grab a [screenshot of buzzfeed splash](http://localhost:3000/1280x1024/buzzfeed.com?opt[selector]=.splash__container)
+
+##Options
+| param    | default | note |
+| -----    | ------- | ---- |
+| delay    | 2       |      |
+| crop     | false   |      |
+| cookies  | []      |      |
+| selector | ""      |      |
+| hide     | []      |      |
+| username | ""      |      |
+| password | ""      |      |
+| scale    | 1       |      |
+| fast     | true    | false to fetch live |
+| format   | "png"   |      |
+|userAgent|  "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"||
