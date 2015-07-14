@@ -6,8 +6,10 @@ var express = require('express')
   , config  = require('config')
   , aws     = require('../helpers/aws')
   , md5     = require('MD5')
-  , AWS     = require('aws-sdk');
+  , AWS     = require('aws-sdk')
+  , q       = require('q');
 
+app.disable('etag');
 app.get('/:viewport/:url', function (req, res) {
   var viewport    = [req.params.viewport || '1280x1024']
     , url         = req.params.url || 'google.com'
@@ -36,14 +38,19 @@ app.get('/:viewport/:url', function (req, res) {
     // });
 
     var s3 = new AWS.S3({params: {Bucket: config.get('AWS.bucket')}});
-    s3.headObject({Key: pageresOpts.filename}, function(err, data){
+    s3.getObject({Key: pageresOpts.filename}, function(err, data){
       if(!err) {
         fileSent = true;
-        res.redirect(301, 'https://s3.amazonaws.com/' + config.get('AWS.bucket') + '/' + pageresOpts.filename);
+        res.set({
+          'Content-Type'   : data.ContentType,
+          'ETag'           : data.ETag ,
+          'Content-Length' : data.ContentLength,
+          'Last-Modified'  : data.LastModified
+        });
+        res.send(new Buffer(data.Body));
       }
 
       if(!app.get(reqCacheKey)) {
-        console.log('going out mom!');
 
         //set our key because we are going to go get a new screenshot
         app.set(reqCacheKey);
