@@ -5,6 +5,20 @@ var AWS = require('aws-sdk')
 	, fs = require('fs');
 
 var screen_canon_s3 = {
+	get_file : function(filename, res) {
+		var s3 = new AWS.S3({params: {Bucket: config.get('AWS.bucket')}});
+    s3.getObject({Key: filename}, function(err, data){
+      if(!err) {
+        res.set({
+          'Content-Type'   : data.ContentType,
+          'ETag'           : data.ETag ,
+          'Content-Length' : data.ContentLength,
+          'Last-Modified'  : data.LastModified
+        });
+        res.send(new Buffer(data.Body));
+      }
+    });
+	},
 	upload_screenshot: function(args) {
 		fs.readFile(args.fullPath, function (err, data){
 			var s3bucket = new AWS.S3({params: {Bucket: config.get('AWS.bucket')}});
@@ -16,7 +30,7 @@ var screen_canon_s3 = {
 						ContentType: "image/" + config.get('pageres_options.format')
 					};
 					s3bucket.upload(params, function (err, data) {
-            console.log(data);
+            // console.log(data);
           });
 			});
 		});

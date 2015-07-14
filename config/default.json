@@ -4,11 +4,11 @@
 		"secret_key" : "",
 		"bucket"     : ""
 	},
+	"use_aws" : false,
 	"pageres_options" : {
 		"delay" : 2,
 		"crop" : false,
 		"cookies" : [],
-		"filename" : "<%= date %> - <%= url %>",
 		"selector" : "",
 		"hide" : [],
 		"username" : "",
@@ -17,6 +17,5 @@
 		"format" : "png",
 		"userAgent" : "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"
 	},
-	"render_path" : "/tmp/screen-canon/",
-	"use_aws" : false
+	"render_path" : "/tmp/screen-canon/"
 }
