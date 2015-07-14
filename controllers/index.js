@@ -1,7 +1,7 @@
 var express = require('express')
   , app     = express();
 
-app.use('/', require('./screen-canon'));
-app.use('/dashboard', require('./dashboard'));
+app.use('/', require('./dashboard'));
+app.use('/shot', require('./shot'));
 
 module.exports = app

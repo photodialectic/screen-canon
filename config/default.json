@@ -1,22 +1,29 @@
 {
-	"AWS" : {
+	"debug" : false,
+
+	"render_path" : "/tmp/screen-canon/",
+	"db_name"     : "screen-canon",
+	"db_host"     : "localhost",
+	"use_aws"     : false,
+	
+	"aws" : {
 		"access_key" : "",
 		"secret_key" : "",
 		"bucket"     : ""
 	},
-	"use_aws" : false,
+	
 	"pageres_options" : {
-		"delay" : 2,
-		"crop" : false,
-		"cookies" : [],
-		"selector" : "",
-		"hide" : [],
-		"username" : "",
-		"password" : "",
-		"scale" : 1,
-		"fast" : true, 
-		"format" : "png",
+		"delay"     : 2,
+		"crop"      : false,
+		"cookies"   : [],
+		"selector"  : "",
+		"hide"      : [],
+		"username"  : "",
+		"password"  : "",
+		"scale"     : 1,
+		"fast"      : true,
+		"format"    : "png",
 		"userAgent" : "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"
-	},
-	"render_path" : "/tmp/screen-canon/"
+	}
+
 }
