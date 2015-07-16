@@ -4,13 +4,15 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start" : "node app.js",
-    "start:dev" : "export NODE_ENV=development; node app.js",
-    "start:test" : "export NODE_ENV=test; node app.js",
-    "test:db" : "mongorestore --db=screen-canon-test dump/screen-canon/",
+    "start": "node app.js",
+    "start:dev": "export NODE_ENV=development; node app.js",
+    "start:test": "export NODE_ENV=test; node app.js",
+    "test:db": "mongorestore --db=screen-canon-test dump/screen-canon/",
     "build:css": "sass scss/base.scss public/css/main.css",
     "build:css-min": "node_modules/.bin/cleancss public/css/main.css > public/css/main.min.css",
-    "build": "npm install && npm prune && npm run build:css && npm run build:css-min"
+    "build:js": "node dev_tools/r.js -o dev_tools/build.js",
+    "build": "npm install && npm prune && npm run build:css && npm run build:css-min && npm run build:js",
+    "watch": "node dev_tools/watch.js"
   },
   "author": "Nick Hedberg",
   "license": "ISC",
@@ -28,6 +30,7 @@
     "method-override": "^2.3.3",
     "mongoose": "^4.0.7",
     "mustache-express": "^1.2.1",
+    "node-watch": "^0.3.4",
     "pageres": "^2.0.0",
     "process": "^0.11.1"
   },
