@@ -12,42 +12,36 @@ Parameters could include a selector, coodinates, viewport, user-agent, etc. Use 
 Mainly [pageres](https://github.com/sindresorhus/pageres) but I also like the idea that you could request a screenshot and node could automatically start processing a new image but reply to the client with a cached copy. That way popular images stay more fresh than less popular. 
 
 ##TL;DR;
-Clone this repo
+
 ```
+cd
+git clone https://github.com/photodialectic/screen-canon.git
 cd screen-canon
 ```
+
+Install node modules then build and minify CSS from SASS
 ```
-make dev
+npm run build
 ```
+
+Start the development server
+```
+npm run start:dev
+```
+
 *Make sure you have a ```config/development.json``` file or whatever relevant environment you want. 
 
-Go and grab a [screenshot of buzzfeed splash](http://localhost:3000/1280x1024/buzzfeed.com?opt[selector]=.splash__container)
-
 ##Options
-| param    | default | note |
-| -----    | ------- | ---- |
-| delay    | 2       |      |
-| crop     | false   |      |
-| cookies  | []      |      |
-| selector | ""      |      |
-| hide     | []      |      |
-| username | ""      |      |
-| password | ""      |      |
-| scale    | 1       |      |
-| fast     | true    | false to fetch live |
-| format   | "png"   |      |
-|userAgent|  "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"||
-
-##Example URLs
-```
-http://localhost:3000/1366x768/buzzfeed.com?opt[selector]=.splash__container
-http://localhost:3000/1366x768/buzzfeed.com?opt[selector]=.badge-list
-http://localhost:3000/1366x768/buzzfeed.com?opt[crop]=true
-http://localhost:3000/iPhone/buzzfeed.com?opt[userAgent]=Mozilla%2F5.0(iPhone%3BU%3BCPUiPhoneOS4_0likeMacOSX%3Ben-us)AppleWebKit%2F532.9(KHTML%2ClikeGecko)Version%2F4.0.5Mobile%2F8A293Safari%2F6531.22.7
-http://localhost:3000/iPhone/buzzfeed.com?opt[userAgent]=Mozilla%2F5.0(iPhone%3BU%3BCPUiPhoneOS4_0likeMacOSX%3Ben-us)AppleWebKit%2F532.9(KHTML%2ClikeGecko)Version%2F4.0.5Mobile%2F8A293Safari%2F6531.22.7&opt
-http://localhost:3000/375x667/buzzfeed.com?opt[crop]=true&opt[userAgent]=Mozilla%2F5.0(iPhone%3BU%3BCPUiPhoneOS4_0likeMacOSX%3Ben-us)AppleWebKit%2F532.9(KHTML%2ClikeGecko)Version%2F4.0.5Mobile%2F8A293Safari%2F6531.22.7
-http://localhost:3000/375x667/buzzfeed.com?opt[selector]=.splash__container&opt[userAgent]=Mozilla%2F5.0(iPhone%3BU%3BCPUiPhoneOS4_0likeMacOSX%3Ben-us)AppleWebKit%2F532.9(KHTML%2ClikeGecko)Version%2F4.0.5Mobile%2F8A293Safari%2F6531.22.7
-http://localhost:3000/1366x768/startribune.com?opt[selector]=.nav-weather-mod
-http://localhost:3000/1366x768/startribune.com?opt[crop]=true
-http://localhost:3000/1366x768/weather.com?opt[selector]=.condition-hp
-```
+| param     | default                                                                                                | note                                                                                                |
+| ----------| -------------------------------------------------------------------------------------------------------| ----------------------------------------------------------------------------------------------------|
+| delay     | 2 (number)                                                                                             | This is currently (not working)[https://github.com/sindresorhus/pageres/issues/183]                 |
+| crop      | false (bool)                                                                                           | Crop to the set height.                                                                             |
+| cookies   | [] (string or array)                                                                                   | A string with the same format as a browser cookie or an object of what phantomjs.addCookie accepts. |
+| selector  | "" (string)                                                                                            | Capture a specific DOM element.                                                                     |
+| hide      | [] (array)                                                                                             | Hide an array of DOM elements. *currently not working                                               |
+| username  | "" (string)                                                                                            | Username for authenticating with HTTP auth.                                                         |
+| password  | "" (string)                                                                                            | Password for authenticating with HTTP auth.                                                         |
+| scale     | 1 (number)                                                                                             | Scale webpage ```n``` times.                                                                        |
+| fast      | true (bool)                                                                                            | false to fetch live                                                                                 |
+| format    | "png" (string)                                                                                         | Image format.                                                                                       |
+| userAgent | "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36" | Custom user agent.                                                                                  |

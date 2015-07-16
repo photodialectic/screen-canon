@@ -1,10 +1,16 @@
 var express = require('express')
   , app     = express()
-  , mustacheExpress = require('mustache-express');
+  , db      = require('./model/db')
+  , mustacheExpress = require('mustache-express')
+  , bodyParser = require('body-parser');
 
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+// parse application/json
+app.use(bodyParser.json());
 
 app.use('/static', express.static('public'));
-app.use(require('./controllers'))
+app.use(require('./controllers'));
 
 app.engine('mustache', mustacheExpress());
 
