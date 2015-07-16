@@ -1,12 +1,19 @@
-define(function (require) {
-    // Load any app-specific modules
-    // with a relative require call,
-    // like:
-    var messages = require('./models/message');
+define(['jquery', 'backbone', 'marionette', 'underscore', 'mustache'], 
+	function (jquery, Backbone, Marionette, _,  mustache) {
+		var App = new Backbone.Marionette.Application();
 
-    // Load library/vendor modules using
-    // full IDs, like:
-    var print = require('./models/print');
+	  //Organize Application into regions corresponding to DOM elements
+  	//Regions can contain views, Layouts, or subregions nested as necessary
+    App.addRegions({
+      headerRegion:"header",
+      mainRegion:"#main"
+    });
 
-    print(messages.getHello());
+    App.addInitializer(function () {
+      Backbone.history.start();
+    });
+
+    
+    return App;
+
 });
