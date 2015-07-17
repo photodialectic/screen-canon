@@ -6,7 +6,8 @@ define(['jquery', 'backbone', 'marionette', 'underscore', 'mustache'],
   	//Regions can contain views, Layouts, or subregions nested as necessary
     App.addRegions({
       headerRegion:"header",
-      mainRegion:"#main"
+      settingsRegion:"#settings-region",
+      renderRegion:"#render-region"
     });
 
     App.addInitializer(function () {

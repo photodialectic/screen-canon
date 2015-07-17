@@ -1,13 +1,14 @@
-define(['app/main', 'backbone', 'marionette', 'views/header', 'views/shot'],
-    function (App, Backbone, Marionette, header, shot) {
+define(['app/main', 'backbone', 'marionette', 'views/header', 'views/shoot'],
+    function (App, Backbone, Marionette, header, shoot) {
     
-        return Backbone.Marionette.Controller.extend({
+       return Backbone.Marionette.Controller.extend({
             initialize:function (options) {
                 App.headerRegion.show(new header());
             },
             //gets mapped to in AppRouter's appRoutes
             index: function () {
-                App.mainRegion.show(new shot());
+                App.settingsRegion.show(new shoot());
             }
         });
+
 });

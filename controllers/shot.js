@@ -41,7 +41,7 @@ app.post('/', function(req, res){
       shot.url      = req.body.url;
       shot.viewport = req.body.viewport;
       shot.options  = JSON.stringify(req.body); 
-      shot._id      = md5(shot.url + shot.viewport + shot.options);
+      shot._id      = id;
 
       shot.save(function(err, data){
         if(err) {

@@ -6,9 +6,12 @@
     <script data-main="static/js/app" src="static/js/libs/require.js"></script>
   </head>
   <body>
-    <div data-role="page">
+    <div data-role="page" class="screen_canon-container mx-auto py3">
       <header data-role="header"></header>
-      <div id="main" class="container-fluid" data-role="content"></div>
+      <div id="main" data-role="content">
+        <div id="settings-region" class="col col-4 pr3"></div>
+        <div id="render-region" class="col col-8 pr3"></div>
+      </div>
       <footer data-role="footer" class="footer navbar navbar-fixed-bottom"></footer>
     </div>
   </body>

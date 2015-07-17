@@ -12,9 +12,6 @@ define(["jquery", "backbone"],
 
             // Default values for all of the Model attributes
             defaults: {
-                url: 'http://www.buzzfeed.com/indexbeta',
-                selector: '#hotonbuzzfeed',
-                viewport: '1280x1024'
             },
 
             // Get's called automatically by Backbone when the set and/or save methods are called (Add your own logic)
