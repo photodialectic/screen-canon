@@ -31,6 +31,8 @@ npm run start:dev
 
 *Make sure you have a ```config/development.json``` file or whatever relevant environment you want. 
 
+[make a screenshot](http://localhost:3000/)
+
 ##Options
 | param     | default                                                                                                | note                                                                                                |
 | ----------| -------------------------------------------------------------------------------------------------------| ----------------------------------------------------------------------------------------------------|

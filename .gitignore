@@ -30,3 +30,8 @@ config/*
 !config/default.json
 
 .sass-cache
+
+public/css/*
+public/js/*
+
+.DS_Store
