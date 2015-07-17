@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Screen-canon | Dashboard</title>
-		<link rel="stylesheet" href="static/css/main.min.css">
-	</head>
-
-	<body>
-		<div class="clearfix">
-			{{#data}}
-				<img src="/shot/{{_id}}" />
+{{>header}}
+    <div data-role="page" class="screen_canon-container mx-auto py3">
+	    {{#data}}
+	    	<div class="col col-12">
+					<img src="/shot/{{_id}}" />
+				</div>
 		  {{/data}}
-		</div>
-	</body>
-
-</html>
+    </div>
+{{>footer}}

@@ -5,8 +5,7 @@ var AWS     = require('aws-sdk')
   , fs      = require('fs')
   , debug   = config.get('debug');
 
-process.env['AWS_ACCESS_KEY_ID']     = config.get('aws.access_key');
-process.env['AWS_SECRET_ACCESS_KEY'] = config.get('aws.secret_key');
+AWS.config.update({accessKeyId: config.get('aws.access_key'), secretAccessKey: config.get('aws.secret_key')});
 
 module.exports = {
  
