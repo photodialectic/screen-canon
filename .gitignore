@@ -21,6 +21,7 @@ coverage
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
+public/js/*
 
 # Dependency directory
 # https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
@@ -30,8 +31,5 @@ config/*
 !config/default.json
 
 .sass-cache
-
-public/css/*
-public/js/*
 
 .DS_Store

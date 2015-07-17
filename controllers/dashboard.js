@@ -3,7 +3,7 @@ var express = require('express')
   , config  = require('config');
 
 app.get('/', function (req, res) {
-	res.render('dashboard', { 'options' : config.get('pageres_options') } );
+	res.render('index', { 'options' : config.get('pageres_options') } );
 });
 
 module.exports = app
