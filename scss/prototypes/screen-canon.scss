@@ -1,3 +1,9 @@
 .screen_canon-container {
 	max-width: 1200px;
 }
+
+.preview {
+	min-height: 50px;
+	min-width: 50px;
+	background:url(../ajax-loader.gif) no-repeat;
+}
