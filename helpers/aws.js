@@ -27,24 +27,26 @@ module.exports = {
 
   upload_screenshot: function(args) {
     fs.readFile(args.fullPath, function (err, data){
-      var s3bucket = new AWS.S3({params: {Bucket: config.get('aws.bucket')}});
-      s3bucket.createBucket(function () {
-          var params = {
-            Key: args.filename,
-            Body: data,
-            ACL: "public-read",
-            ContentType: "image/" + config.get('pageres_options.format')
-          };
-          s3bucket.upload(params, function (err, data) {
-            if(debug) {
-              if(err) {
-                console.log(err)
-              } else {
-                console.log("\t\t " + data.Location);
+      if(!err) {
+        var s3bucket = new AWS.S3({params: {Bucket: config.get('aws.bucket')}});
+        s3bucket.createBucket(function () {
+            var params = {
+              Key: args.filename,
+              Body: data,
+              ACL: "public-read",
+              ContentType: "image/" + config.get('pageres_options.format')
+            };
+            s3bucket.upload(params, function (err, data) {
+              if(debug) {
+                if(err) {
+                  console.log(err)
+                } else {
+                  console.log("\t\t " + data.Location);
+                }
               }
-            }
-          });
-      });
+            });
+        });
+      }
     });
   }
 
