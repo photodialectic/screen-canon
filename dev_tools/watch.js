@@ -5,7 +5,7 @@ var watch = require('node-watch')
 	;
 
 
-watch('sp_app', function(filename) {
+watch('www', function(filename) {
 	console.log(filename, ' changed. Build and uglify JS');
   exec("npm run build:js").stdout.on('data', function (data) {
 	  console.log(data);
