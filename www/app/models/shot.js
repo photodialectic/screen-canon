@@ -3,7 +3,7 @@ define(["jquery", "backbone"],
         // Creates a new Backbone Model class object
         var Model = Backbone.Model.extend({
 
-            url: '/shot',
+            url: '/shoot',
 
             // Model Constructor
             initialize: function() {
