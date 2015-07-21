@@ -2,7 +2,7 @@ var express = require('express')
   , app     = express()
   , config  = require('config')
   , md5     = require('MD5')
-  , canon   = require('../helpers/canon')
+  , canon   = require('../lib/canon')
   , Shot    = require('../model/shot');
 
 app.get('/', function(req, res){
