@@ -4,17 +4,18 @@
 // except for 'app' ones, which are in a sibling
 // directory.
 requirejs.config({
-    baseUrl: './libs',
-    paths: {
-        'app'         : '../app',
-        'marionette'  : 'core/backbone.marionette',
-        'routes'      : '../app/routes',
-        'models'      : '../app/models',
-        'controllers' : '../app/controllers',
-        'views'       : '../app/views',
-        'mustache'    : 'mustache',
-        'stache'      : 'stache',
-    }
+  baseUrl: './libs',
+  paths: {
+    'app': '../app',
+    'marionette': 'core/backbone.marionette',
+    'routes': '../app/routes',
+    'models': '../app/models',
+    'controllers': '../app/controllers',
+    'views': '../app/views',
+    'components': '../app/components',
+    'mustache': 'mustache',
+    'stache': 'stache',
+  }
 });
 
 // Start loading the main app file. Put all of

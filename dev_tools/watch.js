@@ -7,7 +7,7 @@ var watch = require('node-watch')
 
 watch('www', function(filename) {
 	console.log(filename, ' changed. Build and uglify JS');
-  exec("npm run build:js").stdout.on('data', function (data) {
+  exec("npm run build:js && npm run clean:js:www").stdout.on('data', function (data) {
 	  console.log(data);
 	});
 
