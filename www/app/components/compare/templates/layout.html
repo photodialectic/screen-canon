@@ -2,22 +2,29 @@
 	<button class="button button--primary js-add-new-url-fieldset col xs-col-12 xs-mb1">Add URL</button>
 	<fieldset class="form-fieldset col xs-col-6">
 		<label class="form-label">Platform</label>
-	  <input type="checkbox" class="checkbox" id="check_1" value="check_1" name="checkboxes">
-	  <label for="check_1">Mobile Web</label>
-	  <input type="checkbox" class="checkbox" id="check_2" value="check_2" name="checkboxes">
-	  <label for="check_2">Desktop Web</label>
-	  <input type="checkbox" class="checkbox" id="check_1" value="check_1" name="checkboxes">
-	  <label for="check_1">Android Buzzfeed App</label>
-	  <input type="checkbox" class="checkbox" id="check_2" value="check_2" name="checkboxes">
-	  <label for="check_2">iOS Buzzfeed App</label>
-	  <input type="checkbox" class="checkbox" id="check_2" value="check_2" name="checkboxes">
-	  <label for="check_2">iOS Buzzfeed News App</label>
+	  <input type="checkbox" class="checkbox" id="mob_web" value="mob_web" name="platform">
+	  <label for="mob_web">Mobile Web</label>
+	  <input type="checkbox" class="checkbox" id="dskp_web" value="dskp_web" name="platform">
+	  <label for="dskp_web">Desktop Web</label>
+	  <input type="checkbox" class="checkbox" id="anrd_bf_app" value="anrd_bf_app" name="platform">
+	  <label for="anrd_bf_app">Android Buzzfeed App</label>
+	  <input type="checkbox" class="checkbox" id="ios_bf_app" value="ios_bf_app" name="platform">
+	  <label for="ios_bf_app">iOS Buzzfeed App</label>
+	  <input type="checkbox" class="checkbox" id="ios_bf_app_news" value="ios_bf_app_news" name="platform">
+	  <label for="ios_bf_app_news">iOS Buzzfeed News App</label>
 	</fieldset>
-	<fieldset class="form-fieldset col xs-col-6">
+	<fieldset class="form-fieldset col xs-col-6 xs-mb1">
 		<label class="form-label">Environment</label>
-	  <input type="checkbox" class="checkbox" id="check_1" value="check_1" name="checkboxes">
-	  <label for="check_1">Stage</label>
-	  <input type="checkbox" class="checkbox" id="check_2" value="check_2" name="checkboxes">
-	  <label for="check_2">Prod</label>
+	  <input type="checkbox" class="checkbox" id="dev" value="dev" name="environment">
+	  <label for="dev">Dev</label>
+	  <input type="checkbox" class="checkbox" id="stage" value="stage" name="environment">
+	  <label for="stage">Stage</label>
+	  <input type="checkbox" class="checkbox" id="prod" value="prod" name="environment">
+	  <label for="prod">Prod</label>
 	</fieldset>
+	<input type="hidden" name="id" value="1" />
+	<div class="col xs-col-12 xs-mt1">
+		<button type="reset" class="button button--delete">Clear</button>
+		<button class="button button--primary rounded js-shoot">Shoot</button>
+	</div>
 </form>

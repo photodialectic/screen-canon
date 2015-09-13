@@ -6,7 +6,7 @@ define(['app/main', 'backbone', 'marionette', 'views/header', 'views/shoot', 'co
         App.headerRegion.show(new header());
       },
       //gets mapped to in AppRouter's appRoutes
-      index: function() {
+      shoot: function() {
         App.settingsRegion.show(new shoot());
       },
       compare: function() {

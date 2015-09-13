@@ -10,7 +10,7 @@ app.get('/', function(req, res) {
 
 app.get('/compare', function(req, res) {
   res.render('index', {
-    'options': config.get('pageres_options')
+    'platforms': require('../lib/compare').platforms
   });
 });
 

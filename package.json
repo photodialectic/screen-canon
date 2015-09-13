@@ -15,7 +15,7 @@
     "clean:js:www": "find www/app -type f -name \"*.js\" -exec node node_modules/.bin/js-beautify -r --config dev_tools/js_beautify_config.json {} \\;",
     "clean:js": "find config www/app views controllers lib -type f -name \"*.js*\" -exec node node_modules/.bin/js-beautify -r --config dev_tools/js_beautify_config.json {} \\;",
     "clean:html": "find views -type f -name \"*.html\" -exec node node_modules/.bin/js-beautify -r --config dev_tools/js_beautify_config.json {} \\;",
-    "clean": "npm run clean:js && clean:html",
+    "clean": "npm run clean:js && npm run clean:js:www && npm run clean:html",
     "watch": "node dev_tools/watch.js"
   },
   "author": "Nick Hedberg",
