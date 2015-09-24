@@ -16,4 +16,4 @@ npm run build
 npm run start:dev
 ```
 
-Go to http://localhost:3000/
+Go to [http://localhost:3000/](http://localhost:3000/)
