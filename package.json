@@ -23,7 +23,7 @@
   "dependencies": {
     "MD5": "^1.2.2",
     "aws-sdk": "^2.1.38",
-    "bf-solid": "^1.0.4",
+    "bf-solid": "1.0.4",
     "body-parser": "^1.13.2",
     "clean-css": "^3.3.5",
     "config": "^1.14.0",
